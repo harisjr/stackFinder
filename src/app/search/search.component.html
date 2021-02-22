@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row head">
+        <div class="col-md-8">
+            <form [formGroup]="uploadForm" (ngSubmit)="search()">
+                <div class="form-group has-search">
+                  <label class="title">Search for Stack Overflow Questions</label>
+                  <span class="fa fa-search form-control-feedback"></span>
+                  <input type="search" name="keyword" formControlName="keyword" class="form-control search-box">
+
+            
+                </div>
+                <button type="submit" class="btn btn-light">Search</button>
+              </form>
+             
+             
+
+              <div class="card p-2 mt-5 mb-5" *ngFor="let x of data | paginate: config">
+                
+               <a href="{{x.link}}" target="_blank"><h5 class="tit">{{x.title}}</h5></a> 
+               <div><span class="sub">{{x.creation_date * 1000 | date:'medium'}}</span> | <span class="subb"> {{x.view_count}} 👁</span> | <span class="subb"> {{x.score}} &#10004;</span></div>
+                <div class="row mt-3">
+                  <div class="col-md-6">
+                    <a href="{{x.owner.link}}" target="_blank"><img [src]=x.owner.profile_image class="banner">
+                      <p class="dfg">{{x.owner.display_name}} <span class="rep">{{x.owner.reputation}} &#9733;</span></p>
+                    </a> 
+                  </div>  
+                  <div class="col-md-6">
+                    <div class="row">
+                    
+                      <div class="col-md-12">
+                        <p class="sub"><span class="font-weight-bold">{{x.answer_count}}</span> person has answered this quesion</p>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="sub">Last activity:<span class="tex-secondary"> {{x.last_activity_date * 1000 | date:'medium'}}</span></div>
+
+                      </div>
+                    </div>
+
+
+                  </div> 
+              </div>
+          
+              </div>
+            <span *ngIf="this.data.length > 0">
+              <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+            </span>
+
+
+              <div class="mt-5">
+                <h5 class="nod">{{this.message}}</h5> 
+               </div>
+        </div>
+    </div>
+    
+</div>

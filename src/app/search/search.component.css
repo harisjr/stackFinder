@@ -1,0 +1,114 @@
+.head {
+  margin-top: 50px;
+}
+
+input {
+  border-radius: 15px;
+}
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: searchfield-cancel-button;
+}
+input:focus {
+  outline: none;
+}
+button {
+  font-family: "Poppins";
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
+.banner {
+  width: 40px;
+  height: auto;
+}
+.rep {
+  font-weight: bold;
+  font-size: 10px;
+  margin-left: 5px;
+}
+a .tit {
+  color: rgb(49, 49, 49);
+  font-family: "Poppins";
+}
+a .tit:hover {
+  color: rgb(45, 103, 179);
+}
+.sub {
+  font-size: 12px;
+  font-family: sans-serif;
+}
+.subb {
+  font-size: 12px;
+}
+a .dfg {
+  color: rgb(73, 73, 73);
+  font-size: 13px;
+}
+
+.card {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0);
+}
+.card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+.nod {
+  font-family: "Poppins";
+}
+
+@media screen and (min-device-width: 100px) and (max-device-width: 1000px) {
+  .title {
+    font-family: "Poppins";
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: 0.1em;
+  }
+}
+@media screen and (min-device-width: 1000px) and (max-device-width: 10000px) {
+  .title {
+    font-family: "Poppins";
+    font-size: 24px;
+    font-weight: bold;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: 0.15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: 0.1em; /* Adjust as needed */
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+}

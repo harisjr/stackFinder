@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "stackFinder"
+    }
+  },
+  "defaultProject": "stackFinder",
+  "cli": {
+    "analytics": "08a0a906-1ca0-4d47-86bf-ac6e88398fe3"
+  }
 }
